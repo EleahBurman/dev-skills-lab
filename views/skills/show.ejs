@@ -8,15 +8,9 @@
 </head>
 <body>
   <h1>Skills</h1>
-  <ul>
-    <% skills.forEach(skill => { %>
-      <li>
-				<a href="/skills/<%= skill._id %>"><%= skill.text %></a>
-				- 
-				<%= skill.ability ? 'true' : 'false' %>
-			</li>
-    <% }) %>
-  </ul>
-  <a href="/skills/new">Add Skill</a>
+  <h2>Skill #<%= skill._id %></h2>
+  <h3><%= skill.text %></h3>
+  <p>Complete: <%= skill.ability ? 'Yes' : 'No' %></p>
+	<a href="/skills">Go back</a>
 </body>
 </html>

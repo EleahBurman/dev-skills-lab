@@ -21,27 +21,27 @@ function newSkills(req, res) {
 function create(req, res) {
   console.log(req.body)
   req.body.done = false
-  Todo.create(req.body)
-  .then(todo => {
+  Skill.create(req.body)
+  .then(skill => {
 		// Notice we are doing a redirect here!
-    res.redirect('/todos')
+    res.redirect('/skills')
   })
   .catch(error => {
     console.log(error)
-    res.redirect('/todos')
+    res.redirect('/skills/new')
   })
 }
 
 function show(req, res) {
-  Todo.findById(req.params.todoId)
-  .then(todo => {
-    res.render('todos/show', {
-      todo: todo
+  Skill.findById(req.params.skillId)
+  .then(skill => {
+    res.render('skills/show', {
+      skill: skill
     })
   })
   .catch(error => {
     console.log(error)
-    res.redirect('/todos')
+    res.redirect('/skills')
   })
 }
 
