@@ -1,1 +1,1 @@
-import {skills} from '../data/skill.data'
+import {skills} from '../data/skill-data'
