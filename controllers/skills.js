@@ -2,8 +2,8 @@ import { Skill } from '../models/skill.js'
 
 // Inside the index controller, use the Todo model to query for ALL todos
 function index(req, res) {
-  Todo.find({})
-  .then(todos => { // todos represents the result of the query, in this case ALL todos
+  Skill.find({})
+  .then(skills => {
     res.render('skills/index', {
       skills: skills,
     })
@@ -12,4 +12,8 @@ function index(req, res) {
     console.log(error)
     res.redirect('/')
   })
+}
+
+export {
+  index
 }
