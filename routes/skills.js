@@ -8,7 +8,7 @@ router.get('/', skillsCtrl.index)
 // GET localhost:3000/todos/new
 router.get('/new', skillsCtrl.new)
 // POST localhost:3000/todos
-router.get('/:todoId', skillsCtrl.show)
+router.get('/:skillId', skillsCtrl.show)
 router.post('/', skillsCtrl.create)
 
 export {router}
