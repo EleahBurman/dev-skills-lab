@@ -5,11 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skills</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
   <h1>Skills</h1>
+  <a href="/skills/<%= skill._id %>/edit">
+    <button>Edit</button>
   <h2>Skill #<%= skill._id %></h2>
   <h3><%= skill.skill %></h3>
+  <h3><%= skill.ability %></h3>
+  <h3><%= skill.difficulty %></h3>
   <p>Complete: <%= skill.ability ? 'Yes' : 'No' %></p>
 	<a href="/skills">Go back</a>
 </body>

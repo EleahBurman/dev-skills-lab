@@ -15,7 +15,7 @@ function index(req, res) {
   })
 }
 
-function newSkills(req, res) {
+function newSkill(req, res) {
   res.render('skills/new')
 }
 
@@ -58,10 +58,41 @@ function deleteSkill(req, res) {
   })
 }
 
+function edit(req, res) {
+  Skill.findById(req.params.skillId)
+  .then(skill => {
+    res.render('skills/edit', {
+      skill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
+function update(req, res) {
+  console.log(req.body)
+  // req.body.done
+    // a string ==> 'on'
+    // undefined ==> ???
+  req.body.done = !!req.body.done
+  Todo.findByIdAndUpdate(req.params.skillId, req.body, {new: true})
+  .then(skill => {
+    res.redirect(`/skills/${skill._id}`)  
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
 export {
   index,
-  newSkills as new,
+  newSkill as new,
   create,
   show,
-  deleteSkill as delete
+  deleteSkill as delete,
+  edit,
+  update
 }
