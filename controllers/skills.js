@@ -1,6 +1,6 @@
 import { Skill } from '../models/skill.js'
 
-// Inside the index controller, use the Todo model to query for ALL todos
+// Inside the index controller, use the Skill model to query for ALL skills
 function index(req, res) {
   Skill.find({})
   .then(skills => {
@@ -77,7 +77,7 @@ function update(req, res) {
     // a string ==> 'on'
     // undefined ==> ???
   req.body.done = !!req.body.done
-  Todo.findByIdAndUpdate(req.params.skillId, req.body, {new: true})
+  Skill.findByIdAndUpdate(req.params.skillId, req.body, {new: true})
   .then(skill => {
     res.redirect(`/skills/${skill._id}`)  
   })
