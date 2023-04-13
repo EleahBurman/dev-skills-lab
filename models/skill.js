@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 	
 const skillSchema = new Schema({
-  text: String,
+  skill: String,
   ability: String,
   difficulty: String
 })
