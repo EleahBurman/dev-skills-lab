@@ -11,11 +11,14 @@
   <h1>Skills</h1>
   <a href="/skills/<%= skill._id %>/edit">
     <button class="button">Edit</button>
-  <h2>Skill #<%= skill._id %></h2>
-  <h3><%= skill.skill %></h3>
-  <h3><%= skill.ability %></h3>
-  <h3><%= skill.difficulty %></h3>
-  <p>Complete: <%= skill.ability ? 'Yes' : 'No' %></p>
+  </a>
+  <ul>
+    <li>Skill: <%= skill.skill %></li>
+    <li>Skill ID #<%= skill._id %></li>
+    <li>Ability: <%= skill.ability %></li>
+    <li> Difficulty: <%= skill.difficulty %></li>
+    <li>In Skill List: <%= skill.ability ? 'Yes' : 'No' %></li>
+  </ul> 
 	<a href="/skills">Go back</a>
 </body>
 </html>

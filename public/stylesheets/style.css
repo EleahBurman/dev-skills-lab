@@ -17,7 +17,6 @@ a {
 }
 
 .button {
-
   align-items: center;
   background-color: #fee6e3;
   border: 2px solid #111;
@@ -40,6 +39,7 @@ a {
 .button:hover {
   outline: 0;
   background-color: #166e23;
+  color: white; 
 }
 
 @media (min-width: 768px) {
@@ -58,5 +58,6 @@ a {
 }
 	
 li {
-  list-style: none;
+  list-style-position: inside;
+  color:rgb(15, 3, 240)
 }
